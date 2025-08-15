@@ -1,0 +1,130 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Glog.AI",
+          "organization": "Glog.AI",
+          "fullName": "Glog, Making software more secure",
+          "version": "1.0.0",
+          "semanticVersion": "1.0.0",
+          "informationUri": "https://www.glog.ai",
+          "rules": [
+            {
+              "id": "glog-8ede2e91-5540-4866-a6ca-9a680ab092af",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Exec Usage Detected\" is a vulnerability that arises when a Python program uses the `exec` function or similar functions like `eval`, `execfile`, etc. These functions execute a string of Python code, which can be a potential security risk if the string is generated from untrusted input. This can lead to arbitrary code execution, which is a serious security vulnerability.\n\nIn the provided code, the vulnerability does not exist. The `open` function is not a part of the `exec` family of functions and does not execute code. It simply opens a file with a specified encoding. However, if the `fname` variable is derived from untrusted input, it can lead to a different type of vulnerability, such as path traversal.\n\n## Mitigation Advice\n\nAvoid using `exec`, `eval`, `execfile`, etc. whenever possible. If you must use them, make sure the input is properly sanitized and validated. Do not execute code derived from untrusted input.\n\nFor the `open` function, validate the `fname` variable to ensure it does not contain unexpected values. For example, it should not contain path traversal sequences like `../`.\n\n## Source Code Fix Recommendation\n\n```python\nimport os\n\n# Ensure fname is a simple filename, not a path\nassert os.path.basename(fname) == fname\n\n# Open the file\nwith open(fname, encoding = \"utf8\") as f:\n    content = f.read()\n```\n\n## Library Dependencies\n\nThe provided code does not require any external library dependencies. It uses only the built-in `open` function.\n\n## OWASP Resources\n\n- [OWASP Code Review Guide](https://owasp.org/www-pdf-archive/OWASP_Code_Review_Guide_v2.pdf)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')](https://cwe.mitre.org/data/definitions/78.html)\n- [CWE-94: Improper Control of Generation of Code ('Code Injection')](https://cwe.mitre.org/data/definitions/94.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B102"
+                ]
+              }
+            },
+            {
+              "id": "glog-ba4120cc-f7b6-4429-9849-023346a9146b",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe vulnerability in URL Audit for Permitted Schemes in Python is a security flaw that allows an attacker to manipulate the URL scheme that is passed to the `urllib.request.urlopen()` function. This can lead to various security issues such as remote file inclusion (RFI), local file inclusion (LFI), and server-side request forgery (SSRF). The attacker can exploit this vulnerability to read local files, make requests to internal resources, or execute arbitrary commands.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to validate and sanitize all user inputs. Specifically, for URLs, ensure that the scheme is in the list of permitted schemes (e.g., http, https). Avoid using user-supplied URLs without proper validation and sanitization. \n\n## Source Code Fix Recommendation\n\nHere is a simple way to check if the URL scheme is in the list of permitted schemes:\n\n```python\nfrom urllib.parse import urlparse\nimport urllib.request\n\ndef download_file(url, download_target):\n    parsed_url = urlparse(url)\n    if parsed_url.scheme not in ['http', 'https']:\n        raise ValueError('Invalid URL scheme')\n    with urllib.request.urlopen(url) as source, open(download_target, \"wb\") as output:\n        output.write(source.read())\n```\n\nIn this code, we parse the URL and check if its scheme is either 'http' or 'https'. If not, we raise a ValueError.\n\n## Library Dependencies\n\nThe code example requires the following Python standard libraries:\n\n- urllib\n\n## References\n\n- [CWE-918: Server-Side Request Forgery (SSRF)](https://cwe.mitre.org/data/definitions/918.html)\n- [CWE-23: Relative Path Traversal](https://cwe.mitre.org/data/definitions/23.html)\n\nPlease note that the links provided are valid and active for anonymous users at the time of writing this report."
+              },
+              "properties": {
+                "tags": [
+                  "B310"
+                ]
+              }
+            }
+          ],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        }
+      },
+      "language": "en-US",
+      "results": [
+        {
+          "ruleId": "glog-8ede2e91-5540-4866-a6ca-9a680ab092af",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Exec Usage Detected"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "setup.py"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 5,
+                  "endLine": 10,
+                  "endColumn": 71,
+                  "snippet": {
+                    "text": "    exec(compile(open(fname, encoding=\"utf-8\").read(), fname, \"exec\"))\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 9,
+                  "endLine": 11,
+                  "snippet": {
+                    "text": "def read_version(fname=\"whisper/version.py\"):\n    exec(compile(open(fname, encoding=\"utf-8\").read(), fname, \"exec\"))\n    return locals()[\"__version__\"]\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        },
+        {
+          "ruleId": "glog-ba4120cc-f7b6-4429-9849-023346a9146b",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "\"Vulnerability in URL Audit for Permitted Schemes\""
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "whisper/__init__.py"
+                },
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 10,
+                  "endLine": 69,
+                  "endColumn": 37,
+                  "snippet": {
+                    "text": "    with urllib.request.urlopen(url) as source, open(download_target, \"wb\") as output:\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 68,
+                  "endLine": 70,
+                  "snippet": {
+                    "text": "\n    with urllib.request.urlopen(url) as source, open(download_target, \"wb\") as output:\n        with tqdm(\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        }
+      ],
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ]
+    }
+  ]
+}
