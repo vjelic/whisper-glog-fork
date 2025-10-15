@@ -12,56 +12,6 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
-              "id": "b6314140-73bf-3ef2-97b8-9b8db2dffd93",
-              "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
-              "shortDescription": {
-                "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
-              },
-              "fullDescription": {
-                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "helpUri": "https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
-              "help": {
-                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch)\n - [https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/](https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
-                ]
-              }
-            },
-            {
-              "id": "52e2f947-a758-3a1c-bcd9-b43ff57b7fe6",
-              "name": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
-              "shortDescription": {
-                "text": "Opengrep Finding: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
-              },
-              "fullDescription": {
-                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "helpUri": "https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
-              "help": {
-                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected)\n - [https://cwe.mitre.org/data/definitions/939.html](https://cwe.mitre.org/data/definitions/939.html)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
-                ]
-              }
-            },
-            {
               "id": "6cc4e4d2-9dc9-3d5a-86fd-ee9c38c26a8f",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -110,50 +60,52 @@
               }
             },
             {
-              "id": "32fb03a6-620f-3f0e-9fb2-6ce08316a9ab",
-              "name": "resources.rules.dlint-catastrophic-redos",
+              "id": "52e2f947-a758-3a1c-bcd9-b43ff57b7fe6",
+              "name": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+                "text": "Opengrep Finding: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
               },
               "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
               },
               "defaultConfiguration": {
                 "enabled": true,
-                "level": "error"
+                "level": "warning"
               },
+              "helpUri": "https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
               "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+                "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected)\n - [https://cwe.mitre.org/data/definitions/939.html](https://cwe.mitre.org/data/definitions/939.html)\n"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
+                  "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
                 ]
               }
             },
             {
-              "id": "c538fe86-5163-333c-97c0-3dcb62d81f8e",
-              "name": "resources.rules.dlint-catastrophic-redos",
+              "id": "b6314140-73bf-3ef2-97b8-9b8db2dffd93",
+              "name": "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+                "text": "Opengrep Finding: trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
               },
               "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
               },
               "defaultConfiguration": {
                 "enabled": true,
                 "level": "error"
               },
+              "helpUri": "https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch",
               "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+                "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/trailofbits.python.pickles-in-pytorch.pickles-in-pytorch)\n - [https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/](https://blog.trailofbits.com/2021/03/15/never-a-dill-moment-exploiting-machine-learning-pickle-files/)\n"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
+                  "trailofbits.python.pickles-in-pytorch.pickles-in-pytorch"
                 ]
               }
             },
@@ -206,7 +158,31 @@
               }
             },
             {
-              "id": "273e9291-dbdd-3d75-a671-0c1228176990",
+              "id": "c538fe86-5163-333c-97c0-3dcb62d81f8e",
+              "name": "resources.rules.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
+              "id": "32fb03a6-620f-3f0e-9fb2-6ce08316a9ab",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -231,6 +207,30 @@
             },
             {
               "id": "e3f11784-c20f-3b81-976b-28985335ac9e",
+              "name": "resources.rules.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
+              "id": "273e9291-dbdd-3d75-a671-0c1228176990",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -302,54 +302,6 @@
               }
             },
             {
-              "id": "1f46c8cb-9e96-32a4-a32a-451590a4aaf1",
-              "name": "resources.rules.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
-                ]
-              }
-            },
-            {
-              "id": "3ee525e1-2ef1-30a6-82cf-19ae3e67aa0f",
-              "name": "resources.rules.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
-                ]
-              }
-            },
-            {
               "id": "36aa3859-3ca8-35a8-8ffc-918553e62a2a",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -398,6 +350,30 @@
               }
             },
             {
+              "id": "3ee525e1-2ef1-30a6-82cf-19ae3e67aa0f",
+              "name": "resources.rules.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
               "id": "c05bfb53-3a67-3266-9179-ef5b6a23ae74",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -422,7 +398,7 @@
               }
             },
             {
-              "id": "070c00e1-fc37-3311-9d19-39e665e05c3a",
+              "id": "afa0d8a9-3284-3774-a6b6-3e00e29bdd99",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -470,7 +446,31 @@
               }
             },
             {
-              "id": "afa0d8a9-3284-3774-a6b6-3e00e29bdd99",
+              "id": "070c00e1-fc37-3311-9d19-39e665e05c3a",
+              "name": "resources.rules.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
+              "id": "e1d5e344-8230-3182-b7fa-c9dfd3256107",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -519,30 +519,6 @@
             },
             {
               "id": "4e77f2f2-da4b-362e-97f1-4842498a5761",
-              "name": "resources.rules.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
-                ]
-              }
-            },
-            {
-              "id": "e1d5e344-8230-3182-b7fa-c9dfd3256107",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -649,68 +625,6 @@
       "language": "en-US",
       "results": [
         {
-          "ruleId": "b6314140-73bf-3ef2-97b8-9b8db2dffd93",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "whisper/__init__.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 146,
-                  "startColumn": 22,
-                  "endLine": 146,
-                  "endColumn": 57,
-                  "snippet": {
-                    "text": "        checkpoint = torch.load(fp, map_location=device)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "ee358669e9e983d98207b50f8f675a38ccb6c771515fdce78608b0768aad82d8788b694c9681a77590e44902241d45fdf0e19f02545f74f424031b55678f830c_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "52e2f947-a758-3a1c-bcd9-b43ff57b7fe6",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "whisper/__init__.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 69,
-                  "startColumn": 10,
-                  "endLine": 69,
-                  "endColumn": 37,
-                  "snippet": {
-                    "text": "    with urllib.request.urlopen(url) as source, open(download_target, \"wb\") as output:"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "8e105d9adbb4b8fc378c58cd85e5019072f2090db5c5edc2b65af0e5e83646117f08fe3d58df83c055cbb7ede0ca55a61d550728aa426517e510eabb93d1c9ac_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "6cc4e4d2-9dc9-3d5a-86fd-ee9c38c26a8f",
           "kind": "fail",
           "level": "warning",
@@ -773,64 +687,64 @@
           "properties": {}
         },
         {
-          "ruleId": "32fb03a6-620f-3f0e-9fb2-6ce08316a9ab",
+          "ruleId": "52e2f947-a758-3a1c-bcd9-b43ff57b7fe6",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"^\\d+(\\.\\d+)?$\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead."
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "whisper/normalizers/english.py",
+                  "uri": "whisper/__init__.py",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 193,
-                  "startColumn": 52,
-                  "endLine": 193,
-                  "endColumn": 84,
+                  "startLine": 69,
+                  "startColumn": 10,
+                  "endLine": 69,
+                  "endColumn": 37,
                   "snippet": {
-                    "text": "            next_is_numeric = next is not None and re.match(r\"^\\d+(\\.\\d+)?$\", next)"
+                    "text": "    with urllib.request.urlopen(url) as source, open(download_target, \"wb\") as output:"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "ebe7b1d7571d8a66343222286b06adeac1370c13c6ec65cb5b91a572846dc8b837f316a57f990e498cffad277e62e568e78632a0f064336c49172d2044a923b4_0"
+            "matchBasedId/v1": "8e105d9adbb4b8fc378c58cd85e5019072f2090db5c5edc2b65af0e5e83646117f08fe3d58df83c055cbb7ede0ca55a61d550728aa426517e510eabb93d1c9ac_0"
           },
           "properties": {}
         },
         {
-          "ruleId": "c538fe86-5163-333c-97c0-3dcb62d81f8e",
+          "ruleId": "b6314140-73bf-3ef2-97b8-9b8db2dffd93",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"\\(([^)]+?)\\)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Functions reliant on pickle can result in arbitrary code execution.  Consider loading from `state_dict`, using fickling, or switching to a safer serialization method like ONNX"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "whisper/normalizers/basic.py",
+                  "uri": "whisper/__init__.py",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 66,
-                  "startColumn": 13,
-                  "endLine": 66,
-                  "endColumn": 43,
+                  "startLine": 146,
+                  "startColumn": 22,
+                  "endLine": 146,
+                  "endColumn": 57,
                   "snippet": {
-                    "text": "        s = re.sub(r\"\\(([^)]+?)\\)\", \"\", s)  # remove words between parenthesis"
+                    "text": "        checkpoint = torch.load(fp, map_location=device)"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "10d05eae9b464b1803a21753539a13b990b2a20bc703b49ff5ad86baa4f065c62e23a3b02c7d8ddef272361beca1d325d61161f6f89b768022b9d742c034376d_0"
+            "matchBasedId/v1": "ee358669e9e983d98207b50f8f675a38ccb6c771515fdce78608b0768aad82d8788b694c9681a77590e44902241d45fdf0e19f02545f74f424031b55678f830c_0"
           },
           "properties": {}
         },
@@ -897,11 +811,42 @@
           "properties": {}
         },
         {
-          "ruleId": "273e9291-dbdd-3d75-a671-0c1228176990",
+          "ruleId": "c538fe86-5163-333c-97c0-3dcb62d81f8e",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"([0-9])([a-z])\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Regex `r\"\\(([^)]+?)\\)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "whisper/normalizers/basic.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 13,
+                  "endLine": 66,
+                  "endColumn": 43,
+                  "snippet": {
+                    "text": "        s = re.sub(r\"\\(([^)]+?)\\)\", \"\", s)  # remove words between parenthesis"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "10d05eae9b464b1803a21753539a13b990b2a20bc703b49ff5ad86baa4f065c62e23a3b02c7d8ddef272361beca1d325d61161f6f89b768022b9d742c034376d_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "32fb03a6-620f-3f0e-9fb2-6ce08316a9ab",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"^\\d+(\\.\\d+)?$\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
@@ -911,19 +856,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 410,
-                  "startColumn": 13,
-                  "endLine": 410,
-                  "endColumn": 51,
+                  "startLine": 193,
+                  "startColumn": 52,
+                  "endLine": 193,
+                  "endColumn": 84,
                   "snippet": {
-                    "text": "        s = re.sub(r\"([0-9])([a-z])\", r\"\\1 \\2\", s)"
+                    "text": "            next_is_numeric = next is not None and re.match(r\"^\\d+(\\.\\d+)?$\", next)"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "a90b6f035fdf0dfa25669060e4b88096d33f825eb0bff77b022073f385b792f4c61544f6c1256b0facf0695b3a58ff1c36c9c27d4c5d9763a47ec82a868854b3_0"
+            "matchBasedId/v1": "ebe7b1d7571d8a66343222286b06adeac1370c13c6ec65cb5b91a572846dc8b837f316a57f990e498cffad277e62e568e78632a0f064336c49172d2044a923b4_0"
           },
           "properties": {}
         },
@@ -955,6 +900,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "6d15ac4e766401bb5c9128b340fd43f1dc1d8b6681ca37e54684cd4c8750f59db68d6fce0f0262f6552c0265ba0af4120cd129f6d15f43b97c2f5d2025108ca0_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "273e9291-dbdd-3d75-a671-0c1228176990",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"([0-9])([a-z])\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "whisper/normalizers/english.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 410,
+                  "startColumn": 13,
+                  "endLine": 410,
+                  "endColumn": 51,
+                  "snippet": {
+                    "text": "        s = re.sub(r\"([0-9])([a-z])\", r\"\\1 \\2\", s)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "a90b6f035fdf0dfa25669060e4b88096d33f825eb0bff77b022073f385b792f4c61544f6c1256b0facf0695b3a58ff1c36c9c27d4c5d9763a47ec82a868854b3_0"
           },
           "properties": {}
         },
@@ -1021,68 +997,6 @@
           "properties": {}
         },
         {
-          "ruleId": "1f46c8cb-9e96-32a4-a32a-451590a4aaf1",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `r\"([€£$])([0-9]+) (?:and )?¢([0-9]{1,2})\\b\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "whisper/normalizers/english.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 434,
-                  "startColumn": 13,
-                  "endLine": 434,
-                  "endColumn": 86,
-                  "snippet": {
-                    "text": "        s = re.sub(r\"([€£$])([0-9]+) (?:and )?¢([0-9]{1,2})\\b\", combine_cents, s)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "7653cd6f435c9162eedee9da7059c2cdfb6c8c10815fa4a2166c0136bd4643263ee5d56219d8cd39354976e0d5bc4016f726f1e51e3360fb4d2bbe04e22c24ac_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "3ee525e1-2ef1-30a6-82cf-19ae3e67aa0f",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `r\"\\b1(s?)\\b\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "whisper/normalizers/english.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 438,
-                  "startColumn": 13,
-                  "endLine": 438,
-                  "endColumn": 46,
-                  "snippet": {
-                    "text": "        s = re.sub(r\"\\b1(s?)\\b\", r\"one\\1\", s)"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "4c423f638471cbfd4a6fd34db3e7c96d7ba87e501d03f4e31b0dccc9f79f866cbae0b3b38fb96771ea0b5d07c80bcead1877c856836cdc688315ac5bb1b09498_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "36aa3859-3ca8-35a8-8ffc-918553e62a2a",
           "kind": "fail",
           "level": "warning",
@@ -1145,6 +1059,37 @@
           "properties": {}
         },
         {
+          "ruleId": "3ee525e1-2ef1-30a6-82cf-19ae3e67aa0f",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"\\b1(s?)\\b\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "whisper/normalizers/english.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 438,
+                  "startColumn": 13,
+                  "endLine": 438,
+                  "endColumn": 46,
+                  "snippet": {
+                    "text": "        s = re.sub(r\"\\b1(s?)\\b\", r\"one\\1\", s)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "4c423f638471cbfd4a6fd34db3e7c96d7ba87e501d03f4e31b0dccc9f79f866cbae0b3b38fb96771ea0b5d07c80bcead1877c856836cdc688315ac5bb1b09498_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "c05bfb53-3a67-3266-9179-ef5b6a23ae74",
           "kind": "fail",
           "level": "warning",
@@ -1176,11 +1121,11 @@
           "properties": {}
         },
         {
-          "ruleId": "070c00e1-fc37-3311-9d19-39e665e05c3a",
+          "ruleId": "afa0d8a9-3284-3774-a6b6-3e00e29bdd99",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"\\s+'\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Regex `r\"\\(([^)]+?)\\)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
@@ -1190,19 +1135,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 532,
+                  "startLine": 530,
                   "startColumn": 13,
-                  "endLine": 532,
-                  "endColumn": 36,
+                  "endLine": 530,
+                  "endColumn": 43,
                   "snippet": {
-                    "text": "        s = re.sub(r\"\\s+'\", \"'\", s)  # when there's a space before an apostrophe"
+                    "text": "        s = re.sub(r\"\\(([^)]+?)\\)\", \"\", s)  # remove words between parenthesis"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "326530ce4c43a857b23ba922668c3fabd4d31799fff6857096d58639d68a43dbd87a8e7ed68d9608b8f1104c137b748d630ab4150f32c395abd0b4cf43014638_0"
+            "matchBasedId/v1": "1f93f87f333865e725bcd21be6a336d6a2b97c0490341d36e7255a6772c53de3083c2d3038b49dd39c7b11e01b591f19d2af4ccc7ebb2779acbaec63a41ac49a_0"
           },
           "properties": {}
         },
@@ -1238,11 +1183,11 @@
           "properties": {}
         },
         {
-          "ruleId": "afa0d8a9-3284-3774-a6b6-3e00e29bdd99",
+          "ruleId": "070c00e1-fc37-3311-9d19-39e665e05c3a",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"\\(([^)]+?)\\)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Regex `r\"\\s+'\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
@@ -1252,19 +1197,50 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 530,
+                  "startLine": 532,
                   "startColumn": 13,
-                  "endLine": 530,
-                  "endColumn": 43,
+                  "endLine": 532,
+                  "endColumn": 36,
                   "snippet": {
-                    "text": "        s = re.sub(r\"\\(([^)]+?)\\)\", \"\", s)  # remove words between parenthesis"
+                    "text": "        s = re.sub(r\"\\s+'\", \"'\", s)  # when there's a space before an apostrophe"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "1f93f87f333865e725bcd21be6a336d6a2b97c0490341d36e7255a6772c53de3083c2d3038b49dd39c7b11e01b591f19d2af4ccc7ebb2779acbaec63a41ac49a_0"
+            "matchBasedId/v1": "326530ce4c43a857b23ba922668c3fabd4d31799fff6857096d58639d68a43dbd87a8e7ed68d9608b8f1104c137b748d630ab4150f32c395abd0b4cf43014638_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "e1d5e344-8230-3182-b7fa-c9dfd3256107",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"\\.([^0-9]|$)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "whisper/normalizers/english.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 538,
+                  "startColumn": 13,
+                  "endLine": 538,
+                  "endColumn": 47,
+                  "snippet": {
+                    "text": "        s = re.sub(r\"\\.([^0-9]|$)\", r\" \\1\", s)  # remove periods not followed by numbers"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "8bae1207dd1d3411253f039b0279a37fc1470b632a96d34f6369610bb755ffeead9b431d3b2d3bdfd94e1edb304fa1ca41c48a38aadb3205e1026097c53369ba_0"
           },
           "properties": {}
         },
@@ -1327,37 +1303,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "8a75a25959bdd6c289411168869cbcc5ed68c3b8f7544f6be81f5305a828f56db6d598a5aae5736072a6dad809e32326f34b117428d97168d79220231abae6a9_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "e1d5e344-8230-3182-b7fa-c9dfd3256107",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `r\"\\.([^0-9]|$)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "whisper/normalizers/english.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 538,
-                  "startColumn": 13,
-                  "endLine": 538,
-                  "endColumn": 47,
-                  "snippet": {
-                    "text": "        s = re.sub(r\"\\.([^0-9]|$)\", r\" \\1\", s)  # remove periods not followed by numbers"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "8bae1207dd1d3411253f039b0279a37fc1470b632a96d34f6369610bb755ffeead9b431d3b2d3bdfd94e1edb304fa1ca41c48a38aadb3205e1026097c53369ba_0"
           },
           "properties": {}
         },
