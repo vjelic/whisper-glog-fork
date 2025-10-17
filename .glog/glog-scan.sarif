@@ -36,30 +36,6 @@
               }
             },
             {
-              "id": "94390ddd-b0a8-3018-a3f0-687121d04917",
-              "name": "resources.rules.dangerous-subprocess-use",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
-              },
-              "fullDescription": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dangerous-subprocess-use"
-                ]
-              }
-            },
-            {
               "id": "52e2f947-a758-3a1c-bcd9-b43ff57b7fe6",
               "name": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
               "shortDescription": {
@@ -81,6 +57,30 @@
                 "precision": "very-high",
                 "tags": [
                   "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected"
+                ]
+              }
+            },
+            {
+              "id": "94390ddd-b0a8-3018-a3f0-687121d04917",
+              "name": "resources.rules.dangerous-subprocess-use",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dangerous-subprocess-use"
+              },
+              "fullDescription": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Detected subprocess function '$FUNC' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess](https://stackoverflow.com/questions/3172470/actual-meaning-of-shell-true-in-subprocess)\n - [https://docs.python.org/3/library/subprocess.html](https://docs.python.org/3/library/subprocess.html)\n - [https://docs.python.org/3/library/shlex.html](https://docs.python.org/3/library/shlex.html)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dangerous-subprocess-use"
                 ]
               }
             },
@@ -110,7 +110,7 @@
               }
             },
             {
-              "id": "6f980dd7-1b24-366a-bc74-7c00d5f31a4e",
+              "id": "c538fe86-5163-333c-97c0-3dcb62d81f8e",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -158,7 +158,7 @@
               }
             },
             {
-              "id": "c538fe86-5163-333c-97c0-3dcb62d81f8e",
+              "id": "6f980dd7-1b24-366a-bc74-7c00d5f31a4e",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -302,6 +302,54 @@
               }
             },
             {
+              "id": "1f46c8cb-9e96-32a4-a32a-451590a4aaf1",
+              "name": "resources.rules.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
+              "id": "3ee525e1-2ef1-30a6-82cf-19ae3e67aa0f",
+              "name": "resources.rules.dlint-catastrophic-redos",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
+              },
+              "fullDescription": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "error"
+              },
+              "help": {
+                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.dlint-catastrophic-redos"
+                ]
+              }
+            },
+            {
               "id": "36aa3859-3ca8-35a8-8ffc-918553e62a2a",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
@@ -350,7 +398,7 @@
               }
             },
             {
-              "id": "3ee525e1-2ef1-30a6-82cf-19ae3e67aa0f",
+              "id": "afa0d8a9-3284-3774-a6b6-3e00e29bdd99",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -398,7 +446,7 @@
               }
             },
             {
-              "id": "afa0d8a9-3284-3774-a6b6-3e00e29bdd99",
+              "id": "070c00e1-fc37-3311-9d19-39e665e05c3a",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -446,7 +494,7 @@
               }
             },
             {
-              "id": "070c00e1-fc37-3311-9d19-39e665e05c3a",
+              "id": "c259a636-25e4-3b48-b525-e821eddd4c51",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -471,30 +519,6 @@
             },
             {
               "id": "e1d5e344-8230-3182-b7fa-c9dfd3256107",
-              "name": "resources.rules.dlint-catastrophic-redos",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
-              },
-              "fullDescription": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "error"
-              },
-              "help": {
-                "text": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Regex `$X` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/](https://r2c.dev/blog/2020/finding-python-redos-bugs-at-scale-using-dlint-and-r2c/)\n - [https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/](https://r2c.dev/blog/2020/improving-redos-detection-with-dlint-and-r2c/)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.dlint-catastrophic-redos"
-                ]
-              }
-            },
-            {
-              "id": "c259a636-25e4-3b48-b525-e821eddd4c51",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -566,7 +590,7 @@
               }
             },
             {
-              "id": "4dd0a04e-85fe-3399-a12e-1c076ed92041",
+              "id": "58cbe62e-04d1-32f1-b245-6bbf3da0371e",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -590,7 +614,7 @@
               }
             },
             {
-              "id": "58cbe62e-04d1-32f1-b245-6bbf3da0371e",
+              "id": "4dd0a04e-85fe-3399-a12e-1c076ed92041",
               "name": "resources.rules.dlint-catastrophic-redos",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.dlint-catastrophic-redos"
@@ -656,37 +680,6 @@
           "properties": {}
         },
         {
-          "ruleId": "94390ddd-b0a8-3018-a3f0-687121d04917",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Detected subprocess function 'run' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "whisper/audio.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 58,
-                  "startColumn": 15,
-                  "endLine": 58,
-                  "endColumn": 56,
-                  "snippet": {
-                    "text": "        out = run(cmd, capture_output=True, check=True).stdout"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "4f88324b3ed650ee51964fed004da4934d7602400dedd0bc6a196547de28872398cdb950e83f5e1d0a1f49031eac77e914367d8eb2e5b98be8d0d5a16a927340_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "52e2f947-a758-3a1c-bcd9-b43ff57b7fe6",
           "kind": "fail",
           "level": "warning",
@@ -714,6 +707,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "8e105d9adbb4b8fc378c58cd85e5019072f2090db5c5edc2b65af0e5e83646117f08fe3d58df83c055cbb7ede0ca55a61d550728aa426517e510eabb93d1c9ac_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "94390ddd-b0a8-3018-a3f0-687121d04917",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Detected subprocess function 'run' without a static string. If this data can be\ncontrolled by a malicious actor, it may be an instance of command injection.\nAudit the use of this call to ensure it is not controllable by an external resource.\nYou may consider using 'shlex.escape()'.\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "whisper/audio.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 15,
+                  "endLine": 58,
+                  "endColumn": 56,
+                  "snippet": {
+                    "text": "        out = run(cmd, capture_output=True, check=True).stdout"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "4f88324b3ed650ee51964fed004da4934d7602400dedd0bc6a196547de28872398cdb950e83f5e1d0a1f49031eac77e914367d8eb2e5b98be8d0d5a16a927340_0"
           },
           "properties": {}
         },
@@ -749,11 +773,11 @@
           "properties": {}
         },
         {
-          "ruleId": "6f980dd7-1b24-366a-bc74-7c00d5f31a4e",
+          "ruleId": "c538fe86-5163-333c-97c0-3dcb62d81f8e",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"\\s+\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Regex `r\"\\(([^)]+?)\\)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
@@ -763,19 +787,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 72,
+                  "startLine": 66,
                   "startColumn": 13,
-                  "endLine": 74,
-                  "endColumn": 10,
+                  "endLine": 66,
+                  "endColumn": 43,
                   "snippet": {
-                    "text": "        s = re.sub(\n            r\"\\s+\", \" \", s\n        )  # replace any successive whitespace characters with a space"
+                    "text": "        s = re.sub(r\"\\(([^)]+?)\\)\", \"\", s)  # remove words between parenthesis"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "90aabadd8441b01b2698f79e643af92ebe7082665c2a660e56963733f1df630144a4c16b3cc90860eaa3f6bbd615ae8bb0f5aee85cb8beec57959d8a02297c8c_0"
+            "matchBasedId/v1": "10d05eae9b464b1803a21753539a13b990b2a20bc703b49ff5ad86baa4f065c62e23a3b02c7d8ddef272361beca1d325d61161f6f89b768022b9d742c034376d_0"
           },
           "properties": {}
         },
@@ -811,11 +835,11 @@
           "properties": {}
         },
         {
-          "ruleId": "c538fe86-5163-333c-97c0-3dcb62d81f8e",
+          "ruleId": "6f980dd7-1b24-366a-bc74-7c00d5f31a4e",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"\\(([^)]+?)\\)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Regex `r\"\\s+\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
@@ -825,19 +849,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 66,
+                  "startLine": 72,
                   "startColumn": 13,
-                  "endLine": 66,
-                  "endColumn": 43,
+                  "endLine": 74,
+                  "endColumn": 10,
                   "snippet": {
-                    "text": "        s = re.sub(r\"\\(([^)]+?)\\)\", \"\", s)  # remove words between parenthesis"
+                    "text": "        s = re.sub(\n            r\"\\s+\", \" \", s\n        )  # replace any successive whitespace characters with a space"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "10d05eae9b464b1803a21753539a13b990b2a20bc703b49ff5ad86baa4f065c62e23a3b02c7d8ddef272361beca1d325d61161f6f89b768022b9d742c034376d_0"
+            "matchBasedId/v1": "90aabadd8441b01b2698f79e643af92ebe7082665c2a660e56963733f1df630144a4c16b3cc90860eaa3f6bbd615ae8bb0f5aee85cb8beec57959d8a02297c8c_0"
           },
           "properties": {}
         },
@@ -997,6 +1021,68 @@
           "properties": {}
         },
         {
+          "ruleId": "1f46c8cb-9e96-32a4-a32a-451590a4aaf1",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"([€£$])([0-9]+) (?:and )?¢([0-9]{1,2})\\b\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "whisper/normalizers/english.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 434,
+                  "startColumn": 13,
+                  "endLine": 434,
+                  "endColumn": 86,
+                  "snippet": {
+                    "text": "        s = re.sub(r\"([€£$])([0-9]+) (?:and )?¢([0-9]{1,2})\\b\", combine_cents, s)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "7653cd6f435c9162eedee9da7059c2cdfb6c8c10815fa4a2166c0136bd4643263ee5d56219d8cd39354976e0d5bc4016f726f1e51e3360fb4d2bbe04e22c24ac_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "3ee525e1-2ef1-30a6-82cf-19ae3e67aa0f",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"\\b1(s?)\\b\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "whisper/normalizers/english.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 438,
+                  "startColumn": 13,
+                  "endLine": 438,
+                  "endColumn": 46,
+                  "snippet": {
+                    "text": "        s = re.sub(r\"\\b1(s?)\\b\", r\"one\\1\", s)"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "4c423f638471cbfd4a6fd34db3e7c96d7ba87e501d03f4e31b0dccc9f79f866cbae0b3b38fb96771ea0b5d07c80bcead1877c856836cdc688315ac5bb1b09498_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "36aa3859-3ca8-35a8-8ffc-918553e62a2a",
           "kind": "fail",
           "level": "warning",
@@ -1059,11 +1145,11 @@
           "properties": {}
         },
         {
-          "ruleId": "3ee525e1-2ef1-30a6-82cf-19ae3e67aa0f",
+          "ruleId": "afa0d8a9-3284-3774-a6b6-3e00e29bdd99",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"\\b1(s?)\\b\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Regex `r\"\\(([^)]+?)\\)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
@@ -1073,19 +1159,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 438,
+                  "startLine": 530,
                   "startColumn": 13,
-                  "endLine": 438,
-                  "endColumn": 46,
+                  "endLine": 530,
+                  "endColumn": 43,
                   "snippet": {
-                    "text": "        s = re.sub(r\"\\b1(s?)\\b\", r\"one\\1\", s)"
+                    "text": "        s = re.sub(r\"\\(([^)]+?)\\)\", \"\", s)  # remove words between parenthesis"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "4c423f638471cbfd4a6fd34db3e7c96d7ba87e501d03f4e31b0dccc9f79f866cbae0b3b38fb96771ea0b5d07c80bcead1877c856836cdc688315ac5bb1b09498_0"
+            "matchBasedId/v1": "1f93f87f333865e725bcd21be6a336d6a2b97c0490341d36e7255a6772c53de3083c2d3038b49dd39c7b11e01b591f19d2af4ccc7ebb2779acbaec63a41ac49a_0"
           },
           "properties": {}
         },
@@ -1121,11 +1207,11 @@
           "properties": {}
         },
         {
-          "ruleId": "afa0d8a9-3284-3774-a6b6-3e00e29bdd99",
+          "ruleId": "070c00e1-fc37-3311-9d19-39e665e05c3a",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"\\(([^)]+?)\\)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Regex `r\"\\s+'\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
@@ -1135,19 +1221,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 530,
+                  "startLine": 532,
                   "startColumn": 13,
-                  "endLine": 530,
-                  "endColumn": 43,
+                  "endLine": 532,
+                  "endColumn": 36,
                   "snippet": {
-                    "text": "        s = re.sub(r\"\\(([^)]+?)\\)\", \"\", s)  # remove words between parenthesis"
+                    "text": "        s = re.sub(r\"\\s+'\", \"'\", s)  # when there's a space before an apostrophe"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "1f93f87f333865e725bcd21be6a336d6a2b97c0490341d36e7255a6772c53de3083c2d3038b49dd39c7b11e01b591f19d2af4ccc7ebb2779acbaec63a41ac49a_0"
+            "matchBasedId/v1": "326530ce4c43a857b23ba922668c3fabd4d31799fff6857096d58639d68a43dbd87a8e7ed68d9608b8f1104c137b748d630ab4150f32c395abd0b4cf43014638_0"
           },
           "properties": {}
         },
@@ -1183,11 +1269,11 @@
           "properties": {}
         },
         {
-          "ruleId": "070c00e1-fc37-3311-9d19-39e665e05c3a",
+          "ruleId": "c259a636-25e4-3b48-b525-e821eddd4c51",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Regex `r\"\\s+'\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+            "text": "Regex `r\"(\\d),(\\d)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
           },
           "locations": [
             {
@@ -1197,19 +1283,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 532,
+                  "startLine": 537,
                   "startColumn": 13,
-                  "endLine": 532,
-                  "endColumn": 36,
+                  "endLine": 537,
+                  "endColumn": 45,
                   "snippet": {
-                    "text": "        s = re.sub(r\"\\s+'\", \"'\", s)  # when there's a space before an apostrophe"
+                    "text": "        s = re.sub(r\"(\\d),(\\d)\", r\"\\1\\2\", s)  # remove commas between digits"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "326530ce4c43a857b23ba922668c3fabd4d31799fff6857096d58639d68a43dbd87a8e7ed68d9608b8f1104c137b748d630ab4150f32c395abd0b4cf43014638_0"
+            "matchBasedId/v1": "32f6973125da0bf93f8f7eb44c3a181cce349777f75c6c3aeb8d0f3f59b327f23eaccfdc389802d13a7d5e21f02472dd3f546ae2c8913f7697b4b69f7999f455_0"
           },
           "properties": {}
         },
@@ -1241,37 +1327,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "8bae1207dd1d3411253f039b0279a37fc1470b632a96d34f6369610bb755ffeead9b431d3b2d3bdfd94e1edb304fa1ca41c48a38aadb3205e1026097c53369ba_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "c259a636-25e4-3b48-b525-e821eddd4c51",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `r\"(\\d),(\\d)\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "whisper/normalizers/english.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 537,
-                  "startColumn": 13,
-                  "endLine": 537,
-                  "endColumn": 45,
-                  "snippet": {
-                    "text": "        s = re.sub(r\"(\\d),(\\d)\", r\"\\1\\2\", s)  # remove commas between digits"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "32f6973125da0bf93f8f7eb44c3a181cce349777f75c6c3aeb8d0f3f59b327f23eaccfdc389802d13a7d5e21f02472dd3f546ae2c8913f7697b4b69f7999f455_0"
           },
           "properties": {}
         },
@@ -1338,37 +1393,6 @@
           "properties": {}
         },
         {
-          "ruleId": "4dd0a04e-85fe-3399-a12e-1c076ed92041",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "Regex `r\"\\s+\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "whisper/normalizers/english.py",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 548,
-                  "startColumn": 13,
-                  "endLine": 548,
-                  "endColumn": 35,
-                  "snippet": {
-                    "text": "        s = re.sub(r\"\\s+\", \" \", s)  # replace any successive whitespaces with a space"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "9a2b3e1476cdb806cdd1ed868e766c5b17837821f7108574b61937966baf0c7e175a548009fa543519e7bd449a0b8f89375cba3266764e7eedfe45f0b07432e6_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "58cbe62e-04d1-32f1-b245-6bbf3da0371e",
           "kind": "fail",
           "level": "warning",
@@ -1396,6 +1420,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "015d74d38ca67c8a942bafbe472cee7526944f51349b43eac04b199fe6ff5b2d6cfcdfdde4d3f2b286e2506f9186ee8da7b7a4482334e54a534adf5ebc411d9e_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "4dd0a04e-85fe-3399-a12e-1c076ed92041",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Regex `r\"\\s+\"` may be vulnerable to catastrophic backtracking, which may lead to denial of service attacks. (This rule only matches regex usage, not actual REDoS patterns. For full detection, use Semgrep Pro Engine.)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "whisper/normalizers/english.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 548,
+                  "startColumn": 13,
+                  "endLine": 548,
+                  "endColumn": 35,
+                  "snippet": {
+                    "text": "        s = re.sub(r\"\\s+\", \" \", s)  # replace any successive whitespaces with a space"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "9a2b3e1476cdb806cdd1ed868e766c5b17837821f7108574b61937966baf0c7e175a548009fa543519e7bd449a0b8f89375cba3266764e7eedfe45f0b07432e6_0"
           },
           "properties": {}
         }
